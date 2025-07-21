@@ -1,80 +1,89 @@
-# 🏛️ Projeto: Análise dos Gastos dos Deputados com Databricks
+# 📊 Análise dos Gastos Públicos dos Deputados Federais
 
-Este projeto utiliza dados públicos da Câmara dos Deputados para construir uma pipeline de engenharia de dados no Databricks, aplicando boas práticas com Delta Lake e camadas Bronze → Silver → Gold.
-
----
-
-## 📊 Objetivo
-
-Transformar dados brutos sobre os gastos parlamentares em insights úteis e acessíveis à sociedade, permitindo análises como:
-
-- Quem são os deputados que mais gastam?
-- Quais os tipos de despesa mais comuns?
-- Há sazonalidade nos gastos?
-- Como o gasto médio evolui ao longo do tempo?
+Este projeto tem como objetivo construir um pipeline de engenharia de dados no **Databricks**, utilizando **PySpark**, para analisar os **gastos públicos declarados por deputados federais brasileiros**, com base em dados abertos disponibilizados pela Câmara dos Deputados.
 
 ---
 
-## 🔧 Tecnologias Utilizadas
+## 📁 Estrutura do Projeto
 
-- **Databricks** (PySpark, Delta Lake, SQL)
-- **Python**
-- **Visualização**: Databricks SQL / Power BI
-- **Armazenamento**: DBFS (Delta)
-
----
-
-## 📁 Estrutura dos Notebooks
-
-| Notebook | Descrição |
-|----------|-----------|
-| `01_ingestao_csv` | Lê dados CSV dos gastos e salva em Delta (Bronze) |
-| `02_transformacao_silver` | Limpa, transforma e estrutura dados (Silver) |
-| `03_modelagem_gold` | Agrega e cria fatos para análise (Gold) |
-| `04_analise_final` | Dashboards exploratórios com Spark SQL |
+├── notebooks/
+│ ├── 01_ingestao_dados.ipynb
+│ ├── 02_transformacao_dados.ipynb
+│ ├── 03_limpando_e_modelando.ipynb
+│ └── 04_analise_exploratoria.ipynb
+├── data/
+│ └── database_2024.csv (dados brutos dos gastos parlamentares)
+└── README.md
 
 ---
 
-## 📂 Camadas do Data Lake
+## 🧱 Tecnologias Utilizadas
 
-- **Bronze**: Dados brutos (CSV)
-- **Silver**: Dados tratados e estruturados
-- **Gold**: Dados prontos para análise e BI
-
----
-
-## 📦 Fonte de Dados
-
-Portal da Câmara dos Deputados – [https://www.camara.leg.br/transparencia/despesas-parlamentares/](https://www.camara.leg.br/transparencia/despesas-parlamentares/)
+- **Apache Spark** (via Databricks)
+- **PySpark**
+- **Delta Lake**
+- **Databricks Notebooks**
+- **Pandas e Matplotlib** (para análises complementares, se necessário)
 
 ---
 
-## 🛠️ Como Executar
+## 🧪 Notebooks Explicados
 
-1. Suba o arquivo CSV para `/FileStore/dados/gastos_deputados_2024.csv`
-2. Execute os notebooks em ordem (1 → 4)
-3. Analise os resultados via display ou conecte ao Power BI
-4. (Opcional) Crie dashboards com Databricks SQL
+### 📥 01_ingestao_dados
+
+- Leitura dos arquivos CSV contendo os gastos parlamentares.
+- Padronização dos nomes das colunas.
+- Escrita dos dados crus em formato Delta Lake para processamento eficiente.
+
+### 🔧 02_transformacao_dados
+
+- Carregamento dos dados Delta.
+- Seleção e renomeação das colunas principais.
+- Conversão de datas, tratamento de tipos e valores nulos.
+
+### 🧹 03_limpando_e_modelando
+
+- Criação de tabelas analíticas com agregações por deputado, tipo de despesa e tempo (ano/mês).
+- Preparação para análises visuais e relatórios.
+
+### 📊 04_analise_exploratoria
+
+- Geração de insights com Spark SQL e DataFrames:
+  - Maiores gastos por deputado.
+  - Evolução dos gastos ao longo do tempo.
+  - Tipos de despesas mais frequentes.
 
 ---
 
-## 📌 Exemplos de Visualizações
+## 🗂️ Fonte dos Dados
 
-- Top 10 deputados por gasto total
-- Evolução mensal de gastos por partido
-- Distribuição por tipo de despesa
-- Comparativo de gastos entre estados
+Os dados foram extraídos do portal da Câmara dos Deputados:  
+🔗 https://www.camara.leg.br/transparencia/gastos-parlamentares/
 
 ---
 
-## 📃 Licença
+## 🚀 Como Executar
 
-Projeto para fins educacionais com dados públicos.
+1. Suba os arquivos `.csv` dos gastos para o **Databricks FileStore** ou para uma pasta do DBFS (por exemplo, `/FileStore/gastos/`).
+2. Execute sequencialmente os notebooks:
+   - **01_ingestao_dados**
+   - **02_transformacao_dados**
+   - **03_limpando_e_modelando**
+   - **04_analise_exploratoria**
+3. Visualize os resultados diretamente no notebook.
 
 ---
 
-## ✉️ Contato
+## 📌 Possíveis Extensões
 
-Guilherme Mello  
-[LinkedIn](https://linkedin.com/in/seu-perfil) • [GitHub](https://github.com/seu-usuario)
+- Criação de dashboards com **Power BI** ou **Tableau**.
+- Pipeline automatizado com **Databricks Workflows**.
+- Integração com dados de votação, presença ou redes sociais dos parlamentares.
+
+---
+
+## 👨‍💻 Autor
+
+**Guilherme Mello**  
+Engenheiro de Dados | Analista de Soluções  
 
