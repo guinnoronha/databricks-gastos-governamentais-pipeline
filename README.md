@@ -7,12 +7,12 @@ Este projeto tem como objetivo construir um pipeline de engenharia de dados no *
 ## 📁 Estrutura do Projeto
 
 ├── notebooks/<br>
-│ ├── 01_ingestao_dados.ipynb
-│ ├── 02_transformacao_dados.ipynb
-│ ├── 03_limpando_e_modelando.ipynb
-│ └── 04_analise_exploratoria.ipynb
-├── data/
-│ └── database_2024.csv (dados brutos dos gastos parlamentares)
+│ ├── 01_ingestao_dados.ipynb<br>
+│ ├── 02_transformacao_dados.ipynb<br>
+│ ├── 03_limpando_e_modelando.ipynb<br>
+│ └── 04_analise_exploratoria.ipynb<br>
+├── data/<br>
+│ └── database_2024.csv (dados brutos dos gastos parlamentares)<br>
 └── README.md
 
 ---
