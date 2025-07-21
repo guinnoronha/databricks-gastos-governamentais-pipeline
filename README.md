@@ -23,7 +23,6 @@ Este projeto tem como objetivo construir um pipeline de engenharia de dados no *
 - **PySpark**
 - **Delta Lake**
 - **Databricks Notebooks**
-- **Pandas e Matplotlib** (para análises complementares, se necessário)
 
 ---
 
@@ -71,14 +70,6 @@ Os dados foram extraídos do portal da Câmara dos Deputados:
    - **03_limpando_e_modelando**
    - **04_analise_exploratoria**
 3. Visualize os resultados diretamente no notebook.
-
----
-
-## 📌 Possíveis Extensões
-
-- Criação de dashboards com **Power BI** ou **Tableau**.
-- Pipeline automatizado com **Databricks Workflows**.
-- Integração com dados de votação, presença ou redes sociais dos parlamentares.
 
 ---
 
