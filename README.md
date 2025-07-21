@@ -6,7 +6,7 @@ Este projeto tem como objetivo construir um pipeline de engenharia de dados no *
 
 ## 📁 Estrutura do Projeto
 
-├── notebooks/
+├── notebooks/<br>
 │ ├── 01_ingestao_dados.ipynb
 │ ├── 02_transformacao_dados.ipynb
 │ ├── 03_limpando_e_modelando.ipynb
